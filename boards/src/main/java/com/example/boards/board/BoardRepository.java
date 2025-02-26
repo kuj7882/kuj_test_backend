@@ -10,6 +10,5 @@ import java.util.List;
 import java.util.Optional;
 
 public interface BoardRepository extends JpaRepository<Board, Long> {
-    Board getBoardByIdx(Long boardIdx);
-    Page<Board> findAllByBoardType(PageRequest of, int boardType);
+
 }
