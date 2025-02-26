@@ -4,6 +4,8 @@ import com.example.boards.board.model.Board;
 import lombok.Builder;
 import lombok.Getter;
 
+
+@Builder
 public class BoardDto {
     @Getter
     public static class BoardReq {
