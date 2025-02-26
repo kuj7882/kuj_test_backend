@@ -9,6 +9,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
+import static com.example.boards.board.model.QBoard.board;
+
 @RequiredArgsConstructor
 @Service
 public class CommentService {
@@ -26,20 +28,20 @@ public class CommentService {
         return commentRepository.save(comment);
     }
 
-    @Transactional(readOnly = true)
-    public CommentDto read(Long idx) {
-        Optional<Comment> result = commentRepository.findById(idx);
-
-        if (result.isPresent()) {
-            Comment comment = result.get();
-            return CommentDto.builder()
-                    .Content(comment.getContent())
-                    .writer(comment.getWriter())
-                    .build();
-        }
-
-        return null;
-    }
+//    @Transactional(readOnly = true)
+//    public CommentDto read(Long idx) {
+//        Optional<Comment> result = commentRepository.findById(idx);
+//
+//        if (result.isPresent()) {
+//            Comment comment = result.get();
+//            return CommentDto.builder()
+//                    .content(board.getcontent())
+//                    .writer(comment.getWriter())
+//                    .build();
+//        }
+//
+//        return null;
+//    }
 
     public void addComment(Long postId, CommentDto commentDto) {
     }
